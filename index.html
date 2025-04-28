@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShineTime Community Auto Care</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e40af;
+      --accent: #f59e0b;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 6rem 0;
+      color: white;
+      text-align: center;
+    }
+
+    .service-card {
+      background: white;
+      border: none;
+      border-radius: 12px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin: 0 auto 1.5rem;
+    }
+
+    .community-section {
+      background: #f8fafc;
+      padding: 4rem 0;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .footer {
+      background: var(--text-dark);
+      color: white;
+      padding: 3rem 0;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    .price-tag {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .eco-badge {
+      background: #10b981;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://i.imgur.com/3QZqJ.png" alt="Logo" width="40" class="me-2">
+        <span class="fw-bold" style="color: var(--text-dark);">ShineTime Community Auto Care</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="#services">Services</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#about">Community Impact</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h1 class="display-4 fw-bold mb-4">Professional Detailing with a Community Focus</h1>
+          <p class="lead mb-5">Premium auto care services that give back to local neighborhoods</p>
+          <div class="d-flex gap-3 justify-content-center">
+            <a href="#services" class="btn btn-light btn-lg px-4">Our Services</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Schedule Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3">Our Services</h2>
+        <p class="text-muted">Eco-friendly solutions for every vehicle</p>
+      </div>
+      <div class="row g-4" id="service-grid"></div>
+    </div>
+  </section>
+
+  <!-- Community Impact Section -->
+  <section id="about" class="community-section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-4">Community First Approach</h2>
+          <p class="lead text-muted mb-4">
+            For every service booked, we donate 5% to local youth automotive training programs
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-primary me-2"></i>
+              Eco-friendly cleaning products
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-primary me-2"></i>
+              Free detailing workshops monthly
+            </li>
+            <li class="mb-3">
+              <i class="fas fa-check-circle text-primary me-2"></i>
+              Senior citizen discounts available
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/600x400" alt="Community Workshop" class="img-fluid rounded-3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3">What Our Community Says</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p class="text-muted mb-3">
+              "Their eco-friendly approach sets them apart. My car has never looked better!"
+            </p>
+            <div class="d-flex align-items-center">
+              <img src="https://i.pravatar.cc/40" alt="User" class="rounded-circle me-2">
+              <div>
+                <p class="mb-0 fw-bold">Sarah T.</p>
+                <small class="text-muted">Local Business Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p class="text-muted mb-3">
+              "The free tire safety checks saved me from potential roadside trouble!"
+            </p>
+            <div class="d-flex align-items-center">
+              <img src="https://i.pravatar.cc/40" alt="User" class="rounded-circle me-2">
+              <div>
+                <p class="mb-0 fw-bold">James L.</p>
+                <small class="text-muted">College Student</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <p class="text-muted mb-3">
+              "I appreciate their commitment to hiring and training local youth."
+            </p>
+            <div class="d-flex align-items-center">
+              <img src="https://i.pravatar.cc/40" alt="User" class="rounded-circle me-2">
+              <div>
+                <p class="mb-0 fw-bold">Maria G.</p>
+                <small class="text-muted">Community Leader</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="cta-section p-4 p-lg-5">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="text-white mb-3">Ready to Experience Premium Auto Care?</h2>
+            <p class="text-white-50 mb-0">Book now and join our community of satisfied customers</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="#contact-form" class="btn btn-light btn-lg px-4">Schedule Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-8">
+          <form id="contact-form" class="bg-white p-4 rounded-3 shadow-sm">
+            <div class="
